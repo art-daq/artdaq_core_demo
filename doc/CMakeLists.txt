@@ -17,7 +17,7 @@ function(create_pdf_documentation)
 						   COMMAND make > pdflatex.log 2>&1 WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/latex 
 					   COMMAND mv refman.pdf ${product}_API_Documentation.pdf
 				   DEPENDS ${product}_doc
-				   COMMENT "Generating PDF API Documentation file" VERBATIM)
+				   COMMENT "Generating ${project} PDF API Documentation file" VERBATIM)
 			   add_custom_target(${product}_pdf ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/latex/${product}_API_Documentation.pdf)
 			   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/latex/${product}_API_Documentation.pdf DESTINATION ${product}/${version}/doc/ OPTIONAL)
 	endif(LATEX_FOUND AND EPSTOPDF_FOUND)
