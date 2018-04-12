@@ -1,6 +1,6 @@
 #include "artdaq-core-demo/Overlays/ToyFragment.hh"
 
-#include "cetlib/exception.h"
+#include "cetlib_except/exception.h"
 
 #if 0
 namespace {

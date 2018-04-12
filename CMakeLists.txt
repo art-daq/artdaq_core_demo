@@ -1,5 +1,5 @@
 # ======================================================================
-#  darkart main build file
+#  artdaq_core_demo main build file
 #
 #  cd .../path/to/build/directory
 #  source .../path/to/artdaq-demo/ups/setup_for_development
