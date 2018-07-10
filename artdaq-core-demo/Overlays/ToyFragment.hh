@@ -94,7 +94,7 @@ public:
 		typedef uint32_t trigger_number_t; ///< Type used for the trigger number
 
 		event_size_t event_size : 28; ///< The size of the event, in data_t words
-		event_size_t unused_1 : 4; ///< Unused
+		event_size_t distribution_type : 4; ///< Which distribution_type was used to generate the Fragment data
 
 		trigger_number_t trigger_number : 32; ///< The "trigger number" from the simulated hardware
 
@@ -121,6 +121,13 @@ public:
 	* \return The "trigger number" of the ToyFragment::Header
 	*/
 	Header::trigger_number_t hdr_trigger_number() const { return header_()->trigger_number; }
+
+	/**
+	 * \brief Returns the distribution_type field from the ToyFragment::Header
+	 * \return The distribution_type field from the ToyFragment::Header
+	 */
+	uint8_t hdr_distribution_type() const { return static_cast<uint8_t>(header_()->distribution_type); }
+
 	/**
 	* \brief Gets the size_words variable from the artdaq::Header
 	* \return The size of the Fragment payload
