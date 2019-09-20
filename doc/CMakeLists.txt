@@ -14,7 +14,7 @@ function(create_pdf_documentation)
 	endif(EPSTOPDF_FOUND)
 	if(LATEX_FOUND AND EPSTOPDF_FOUND)
 	add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/latex/${product}_API_Documentation.pdf
-						   COMMAND make > pdflatex.log 2>&1 WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/latex
+						   COMMAND make > pdflatex.log 2>&1 WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/latex 
 					   COMMAND mv refman.pdf ${product}_API_Documentation.pdf
 				   DEPENDS ${product}_doc
 				   COMMENT "Generating ${project} PDF API Documentation file" VERBATIM)
@@ -38,7 +38,7 @@ if(DOXYGEN_FOUND)
 
 	set(TAG_FILES "")
     # Only add cross-package dependencies in MRB
-    if(CM_DEPENDS)
+	if(CM_DEPENDS)
         if(DEFINED ENV{MRB_BUILDDIR})
     		foreach(dependency ${CM_DEPENDS})
 			set(TAG_FILES "${TAG_FILES} ${CMAKE_BINARY_DIR}/${dependency}/doc/${dependency}.tag=../${dependency}/")
@@ -49,6 +49,8 @@ if(DOXYGEN_FOUND)
         endif()
 	endif()
 	
+	string(REPLACE ";" " " DOXYGEN_INCLUDE_PATH "${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES}")
+
 	configure_file(${DOXYFILE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
 	configure_file(${DOXYFILE_DIR}/header.html.in ${CMAKE_CURRENT_BINARY_DIR}/header.html @ONLY)
 	add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${product}.tag
@@ -66,10 +68,10 @@ if(DOXYGEN_FOUND)
     endif()
 
 	# install any documentation text files
-	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} DESTINATION ${product}/${version}
+	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} DESTINATION ${product}/${version} 
 		PATTERN "CMakeLists.txt" EXCLUDE
 		)
-
+		
 	# install doxygen-generated HTML pages and MAN pages.
 	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION ${product}/${version}/doc)
 	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/man DESTINATION ${${product}_lib_dir}/../share)
