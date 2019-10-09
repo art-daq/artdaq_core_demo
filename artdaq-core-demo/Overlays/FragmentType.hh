@@ -15,13 +15,14 @@ namespace detail {
 /**
  * \brief User type codes defined by artdaq_core_demo
  */
-enum FragmentType : artdaq::Fragment::type_t {
-  MISSED = artdaq::Fragment::FirstUserFragmentType,
-  TOY1,
-  TOY2,
-  ASCII,
-  UDP,
-  INVALID  // Should always be last.
+enum FragmentType : artdaq::Fragment::type_t
+{
+	MISSED = artdaq::Fragment::FirstUserFragmentType,
+	TOY1,
+	TOY2,
+	ASCII,
+	UDP,
+	INVALID  // Should always be last.
 };
 
 // Safety check.
