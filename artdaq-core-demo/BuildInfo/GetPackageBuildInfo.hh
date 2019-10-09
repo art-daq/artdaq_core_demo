@@ -13,12 +13,13 @@ namespace coredemo {
 /**
  * \brief Wrapper around the coredemo::GetPackageBuildInfo::getPackageBuildInfo function
  */
-struct GetPackageBuildInfo {
-  /**
+struct GetPackageBuildInfo
+{
+	/**
    * \brief Gets the version number and build timestmap for artdaq_core_demo
    * \return An artdaq::PackageBuildInfo object containing the version number and build timestamp for artdaq_core_demo
    */
-  static artdaq::PackageBuildInfo getPackageBuildInfo();
+	static artdaq::PackageBuildInfo getPackageBuildInfo();
 };
 }  // namespace coredemo
 
