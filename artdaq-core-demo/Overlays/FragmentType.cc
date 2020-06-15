@@ -20,10 +20,8 @@ std::string demo::fragmentTypeToString(FragmentType val)
 	{
 		return names[val - FragmentType::MISSED];
 	}
-	
-	
-		return "INVALID/UNKNOWN";
-	
+
+	return "INVALID/UNKNOWN";
 }
 
 std::map<artdaq::Fragment::type_t, std::string> demo::makeFragmentTypeMap()
