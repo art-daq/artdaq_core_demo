@@ -119,17 +119,20 @@ public:
 	size_t total_line_characters() const { return (hdr_event_size() - hdr_size_words()) * chars_per_word_(); }
 
 	/// Start of the line, returned as a pointer to the char type
-	char const* dataBegin() const { return reinterpret_cast<char const*>(header_() + 1); }
+	char const* dataBegin() const
+	{
+		return reinterpret_cast<char const*>(header_() + 1); // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-bounds-pointer-arithmetic)
+	}
 
 	/// End of the line, returned as a pointer to the char type
-	char const* dataEnd() const { return dataBegin() + total_line_characters(); }
+	char const* dataEnd() const { return dataBegin() + total_line_characters(); } // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
 
 protected:
 	/**
    * \brief Translates between the size of the character type and the artda::Fragment::value_type
    * \return The number of characters in a artdaq::Fragment::value_type
    */
-	static constexpr size_t chars_per_word_() { return sizeof(Header::data_t) / sizeof(char); }
+	static constexpr size_t chars_per_word_() { return sizeof(Header::data_t) / sizeof(char); } // NOLINT(bugprone-sizeof-expression)
 
 	/**
    * \brief header_() simply takes the address of the start of this overlay's
@@ -139,7 +142,7 @@ protected:
    */
 	Header const* header_() const
 	{
-		return reinterpret_cast<AsciiFragment::Header const*>(artdaq_Fragment_.dataBeginBytes());
+		return reinterpret_cast<AsciiFragment::Header const*>(artdaq_Fragment_.dataBeginBytes()); // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
 	}
 
 private:

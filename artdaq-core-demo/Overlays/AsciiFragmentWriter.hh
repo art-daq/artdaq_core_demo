@@ -53,7 +53,7 @@ public:
 	Header* header_()
 	{
 		assert(artdaq_Fragment_.dataSizeBytes() >= sizeof(Header));
-		return reinterpret_cast<Header*>(artdaq_Fragment_.dataBeginBytes());
+		return reinterpret_cast<Header*>(artdaq_Fragment_.dataBeginBytes());  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
 	}
 
 	/**
@@ -99,10 +99,13 @@ inline char* demo::AsciiFragmentWriter::dataBegin()
 {
 	// Make sure there's data past the AsciiFragment header
 	assert(artdaq_Fragment_.dataSizeBytes() >= sizeof(Header) + sizeof(artdaq::Fragment::value_type));
-	return reinterpret_cast<char*>(header_() + 1);
+	return reinterpret_cast<char*>(header_() + 1);  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-bounds-pointer-arithmetic)
 }
 
-inline char* demo::AsciiFragmentWriter::dataEnd() { return dataBegin() + total_line_characters(); }
+inline char* demo::AsciiFragmentWriter::dataEnd()
+{
+	return dataBegin() + total_line_characters();  // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+}
 
 inline void demo::AsciiFragmentWriter::resize(size_t nChars)
 {

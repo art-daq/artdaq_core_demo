@@ -49,7 +49,7 @@ public:
 	Header* header_()
 	{
 		assert(artdaq_Fragment_.dataSizeBytes() >= sizeof(Header));
-		return reinterpret_cast<Header*>(artdaq_Fragment_.dataBeginBytes());
+		return reinterpret_cast<Header*>(artdaq_Fragment_.dataBeginBytes());  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
 	}
 
 	/**
@@ -101,10 +101,12 @@ inline uint8_t* demo::UDPFragmentWriter::dataBegin()
 {
 	// Make sure there's data past the UDPFragment header
 	assert(artdaq_Fragment_.dataSizeBytes() >= sizeof(Header) + sizeof(artdaq::Fragment::value_type));
-	return reinterpret_cast<uint8_t*>(header_() + 1);
+	return reinterpret_cast<uint8_t*>(header_() + 1);  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-bounds-pointer-arithmetic)
 }
 
-inline uint8_t* demo::UDPFragmentWriter::dataEnd() { return dataBegin() + udp_data_words() * bytes_per_word_(); }
+inline uint8_t* demo::UDPFragmentWriter::dataEnd() {
+	return dataBegin() + udp_data_words() * bytes_per_word_(); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+}
 
 inline void demo::UDPFragmentWriter::resize(size_t nBytes)
 {
