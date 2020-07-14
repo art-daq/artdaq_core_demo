@@ -3,6 +3,14 @@ cet_make(LIBRARIES
   artdaq-core_Utilities
   ${CETLIB}
   ${CETLIB_EXCEPT}
+  EXCLUDE
+  ArtdaqDemo_fragmentNameHelper.cc
   )
+
+  simple_plugin(ArtdaqDemo "fragmentNameHelper"
+  artdaq-core_Data
+  artdaq-core-demo_Overlays
+  artdaq-core_Data_Artdaq_fragmentNameHelper)
+
 install_headers()
 install_source()
