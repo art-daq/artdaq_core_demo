@@ -2,11 +2,11 @@
 #include "artdaq-core/Data/FragmentNameHelper.hh"
 
 #include "TRACE/tracemf.h"
-#define TRACE_NAME "ArtdaqDemoFragmentNamingService"
+#define TRACE_NAME "ArtdaqDemoFragmentNameHelper"
 
 namespace artdaq {
 /**
- * \brief ArtdaqDemoFragmentNamingService extends ArtdaqFragmentNamingService.
+ * \brief ArtdaqDemoFragmentNameHelper extends ArtdaqFragmentNamingService.
  * This implementation uses artdaq-demo's SystemTypeMap and directly assigns names based on it
  */
 class ArtdaqDemoFragmentNameHelper : public ArtdaqFragmentNameHelper
@@ -18,7 +18,7 @@ public:
 	~ArtdaqDemoFragmentNameHelper() override = default;
 
 	/**
-	 * \brief ArtdaqDemoFragmentNamingService Constructor
+	 * \brief ArtdaqDemoFragmentNameHelper Constructor
 	 */
 	ArtdaqDemoFragmentNameHelper(std::string unidentified_instance_name, std::vector<std::pair<artdaq::Fragment::type_t, std::string>> extraTypes);
 
@@ -32,9 +32,9 @@ private:
 ArtdaqDemoFragmentNameHelper::ArtdaqDemoFragmentNameHelper(std::string unidentified_instance_name, std::vector<std::pair<artdaq::Fragment::type_t, std::string>> extraTypes)
     : ArtdaqFragmentNameHelper(unidentified_instance_name, extraTypes)
 {
-	TLOG(TLVL_DEBUG) << "ArtdaqDemoFragmentNamingService CONSTRUCTOR START";
+	TLOG(TLVL_DEBUG) << "ArtdaqDemoFragmentNameHelper CONSTRUCTOR START";
 	SetBasicTypes(demo::makeFragmentTypeMap());
-	TLOG(TLVL_DEBUG) << "ArtdaqDemoFragmentNamingService CONSTRUCTOR END";
+	TLOG(TLVL_DEBUG) << "ArtdaqDemoFragmentNameHelper CONSTRUCTOR END";
 }
 }  // namespace artdaq
 
