@@ -10,7 +10,9 @@ cet_make(LIBRARIES
   basic_plugin(ArtdaqDemo "fragmentNameHelper"
   artdaq-core_Data
   artdaq-core-demo_Overlays
-  artdaq-core_Data_Artdaq_fragmentNameHelper)
+  artdaq-core_Data_Artdaq_fragmentNameHelper
+  MF_MessageLogger
+)
 
 install_headers()
 install_source()
