@@ -7,7 +7,7 @@ cet_make(LIBRARIES
   ArtdaqDemo_fragmentNameHelper.cc
   )
 
-  simple_plugin(ArtdaqDemo "fragmentNameHelper"
+  basic_plugin(ArtdaqDemo "fragmentNameHelper"
   artdaq-core_Data
   artdaq-core-demo_Overlays
   artdaq-core_Data_Artdaq_fragmentNameHelper)
