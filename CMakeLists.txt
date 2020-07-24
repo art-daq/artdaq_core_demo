@@ -69,6 +69,7 @@ find_ups_product( TRACE v3_03_00 )
 
 # macros for art_dictionary and simple_plugin
 include(CetTest)
+include(BasicPlugin)
 
 # source
 add_subdirectory(artdaq-core-demo)
