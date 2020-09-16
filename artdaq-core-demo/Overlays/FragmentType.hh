@@ -1,7 +1,7 @@
 #ifndef artdaq_demo_Overlays_FragmentType_hh
 #define artdaq_demo_Overlays_FragmentType_hh
-#include "artdaq-core/Data/Fragment.hh"
 #include <unordered_map>
+#include "artdaq-core/Data/Fragment.hh"
 
 namespace demo {
 
@@ -32,11 +32,11 @@ using detail::FragmentType;
  * \brief List of names (in the order defined below) of the User types defined in artdaq_core_demo
  */
 std::unordered_map<FragmentType, std::string> const names{
-	{FragmentType::MISSED, "MISSED"}, 
-	{FragmentType::TOY1, "TOY1"}, 
-	{FragmentType::TOY2, "TOY2"}, 
-	{FragmentType::ASCII, "ASCII"}, 
-	{FragmentType::UDP, "UDP"},
+    {FragmentType::MISSED, "MISSED"},
+    {FragmentType::TOY1, "TOY1"},
+    {FragmentType::TOY2, "TOY2"},
+    {FragmentType::ASCII, "ASCII"},
+    {FragmentType::UDP, "UDP"},
     {FragmentType::INVALID, "UNKNOWN"}};
 
 /**
