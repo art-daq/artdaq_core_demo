@@ -17,7 +17,7 @@ void demo::ToyFragment::checkADCData(int daq_adc_bits) const
 	demo::ToyFragment::adc_t const* adcPtr(findBadADC(daq_adc_bits));
 	if (adcPtr != dataEndADCs())
 	{
-		throw cet::exception("IllegalADCVal") // NOLINT(cert-err60-cpp)
+		throw cet::exception("IllegalADCVal")  // NOLINT(cert-err60-cpp)
 		    << "Illegal value of ADC word #" << (adcPtr - dataBeginADCs()) << ": 0x" << std::hex << *adcPtr << ".";
 	}
 }

@@ -105,16 +105,18 @@ public:
    * \brief Returns a const pointer to the start of the UDP payload
    * \return const byte pointer to the start of the UDP payload
    */
-	uint8_t const* dataBegin() const { 
-		return reinterpret_cast<uint8_t const*>(header_() + 1); // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-bounds-pointer-arithmetic)
+	uint8_t const* dataBegin() const
+	{
+		return reinterpret_cast<uint8_t const*>(header_() + 1);  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-bounds-pointer-arithmetic)
 	}
 
 	/**
    * \brief Returns a const pointer to the end of the UDP payload
    * \return const byte pointer to the end of the UDP payload
    */
-	uint8_t const* dataEnd() const {
-		return dataBegin() + udp_data_words() * bytes_per_word_(); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+	uint8_t const* dataEnd() const
+	{
+		return dataBegin() + udp_data_words() * bytes_per_word_();  // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
 	}
 
 protected:

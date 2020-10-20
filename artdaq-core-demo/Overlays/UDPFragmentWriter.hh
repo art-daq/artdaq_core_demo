@@ -104,8 +104,9 @@ inline uint8_t* demo::UDPFragmentWriter::dataBegin()
 	return reinterpret_cast<uint8_t*>(header_() + 1);  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast,cppcoreguidelines-pro-bounds-pointer-arithmetic)
 }
 
-inline uint8_t* demo::UDPFragmentWriter::dataEnd() {
-	return dataBegin() + udp_data_words() * bytes_per_word_(); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+inline uint8_t* demo::UDPFragmentWriter::dataEnd()
+{
+	return dataBegin() + udp_data_words() * bytes_per_word_();  // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
 }
 
 inline void demo::UDPFragmentWriter::resize(size_t nBytes)

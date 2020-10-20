@@ -1,12 +1,9 @@
 #ifndef artdaq_demo_Overlays_FragmentType_hh
 #define artdaq_demo_Overlays_FragmentType_hh
+#include <unordered_map>
 #include "artdaq-core/Data/Fragment.hh"
 
 namespace demo {
-/**
- * \brief List of names (in the order defined below) of the User types defined in artdaq_core_demo
- */
-std::vector<std::string> const names{"MISSED", "TOY1", "TOY2", "ASCII", "UDP", "UNKNOWN"};
 
 /**
  * \brief Implementation details namespace
@@ -18,10 +15,10 @@ namespace detail {
 enum FragmentType : artdaq::Fragment::type_t
 {
 	MISSED = artdaq::Fragment::FirstUserFragmentType,
-	TOY1,
-	TOY2,
-	ASCII,
-	UDP,
+	TOY1 = artdaq::Fragment::FirstUserFragmentType + 1,
+	TOY2 = artdaq::Fragment::FirstUserFragmentType + 2,
+	ASCII = artdaq::Fragment::FirstUserFragmentType + 3,
+	UDP = artdaq::Fragment::FirstUserFragmentType + 4,
 	INVALID  // Should always be last.
 };
 
@@ -30,6 +27,17 @@ static_assert(artdaq::Fragment::isUserFragmentType(FragmentType::INVALID - 1), "
 }  // namespace detail
 
 using detail::FragmentType;
+
+/**
+ * \brief List of names (in the order defined below) of the User types defined in artdaq_core_demo
+ */
+std::unordered_map<FragmentType, std::string> const names{
+    {FragmentType::MISSED, "MISSED"},
+    {FragmentType::TOY1, "TOY1"},
+    {FragmentType::TOY2, "TOY2"},
+    {FragmentType::ASCII, "ASCII"},
+    {FragmentType::UDP, "UDP"},
+    {FragmentType::INVALID, "UNKNOWN"}};
 
 /**
  * \brief Lookup the type code for a fragment by its string name
