@@ -10,7 +10,7 @@ cet_make(LIBRARIES
   artdaq_core::artdaq-core_Data
   artdaq-core-demo_Overlays
   artdaq_core::artdaq-core_Data_Artdaq_fragmentNameHelper
-  MF_MessageLogger
+  messagefacility::MF_MessageLogger
 )
 
 install_headers()
