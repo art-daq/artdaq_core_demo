@@ -1,7 +1,7 @@
 cet_make(LIBRARIES
   artdaq_core::artdaq-core_Utilities
-  ${CETLIB}
-  ${CETLIB_EXCEPT}
+  cetlib
+  cetlib_except
   EXCLUDE
   ArtdaqDemo_fragmentNameHelper.cc
   )
@@ -10,7 +10,7 @@ cet_make(LIBRARIES
   artdaq_core::artdaq-core_Data
   artdaq-core-demo_Overlays
   artdaq_core::artdaq-core_Data_Artdaq_fragmentNameHelper
-  ${MF_MESSAGELOGGER}
+  MF_MessageLogger
 )
 
 install_headers()

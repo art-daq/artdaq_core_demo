@@ -16,10 +16,12 @@ libdir      fq_dir      lib
 bindir      fq_dir      bin
 fcldir      -
 
+old_style_config_vars
+
 #
 product			version		optional
 artdaq_core		v3_07_03
-cetbuildtools	v8_10_01	-	only_for_build
+cetbuildtools	v8_11_00	-	only_for_build
 end_product_list
 
 # e6  - with gcc 4.9.1 and -std=c++1y
