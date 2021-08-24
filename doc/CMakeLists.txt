@@ -1,4 +1,3 @@
-cmake_policy(VERSION 3.0.1)
 include(FindDoxygen)
 include(FindLATEX)
 
@@ -35,8 +34,8 @@ if(DOXYGEN_FOUND)
 
 	if(CM_DEPENDS)
 		foreach(dependency ${CM_DEPENDS})
-			if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../${dependency})
-				set(TAG_FILES "${TAG_FILES} ${CMAKE_BINARY_DIR}/${dependency}/doc/${dependency}.tag=../${dependency}/")
+			if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../../${dependency})
+				set(TAG_FILES "${TAG_FILES} ${CMAKE_BINARY_DIR}/${dependency}/doc/${dependency}.tag=../../${dependency}/")
 				add_dependencies(${PROJECT_NAME}_doc ${dependency}_doc)
 			else()
 				string(TOUPPER ${dependency} dependency_uc)
@@ -61,5 +60,4 @@ if(DOXYGEN_FOUND)
 endif(DOXYGEN_FOUND)
 endmacro()
 
-
-create_doxygen_documentation(DEPENDS artdaq_core)
+create_doxygen_documentation()
