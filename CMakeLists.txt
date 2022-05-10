@@ -13,7 +13,7 @@ set(CET_CETBUILDTOOLS_COMPAT TRUE)
 include(Compatibility)
 set(CET_WARN_DEPRECATED)
 
-project(artdaq_core_demo VERSION 1.09.01)
+project(artdaq_core_demo VERSION 1.09.02)
 
 
 set(CMAKE_MODULE_PATH

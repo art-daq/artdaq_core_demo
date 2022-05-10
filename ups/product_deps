@@ -20,7 +20,7 @@ old_style_config_vars
 
 #
 product			version		optional
-artdaq_core		v3_08_01
+artdaq_core		v3_08_04
 cetmodules		v2_26_00	-	only_for_build
 end_product_list
 
@@ -30,12 +30,12 @@ end_product_list
 # -nq- here means there is no qualifier
 # a "-" here means the dependent product is not required by the parent and will not be setup
 qualifier		artdaq_core
-c7:s115:prof	c7:s115:prof
-c7:s115:debug	c7:s115:debug
-e20:s115:prof	e20:s115:prof
-e20:s115:debug	e20:s115:debug
-e19:s115:prof	e19:s115:prof
-e19:s115:debug	e19:s115:debug
+c7:s116:prof	c7:s116:prof
+c7:s116:debug	c7:s116:debug
+e20:s116:prof	e20:s116:prof
+e20:s116:debug	e20:s116:debug
+e19:s116:prof	e19:s116:prof
+e19:s116:debug	e19:s116:debug
 
 c7:s114:prof	c7:s114:prof
 c7:s114:debug	c7:s114:debug
