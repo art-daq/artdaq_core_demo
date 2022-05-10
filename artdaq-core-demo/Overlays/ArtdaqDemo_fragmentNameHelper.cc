@@ -32,9 +32,9 @@ private:
 ArtdaqDemoFragmentNameHelper::ArtdaqDemoFragmentNameHelper(std::string unidentified_instance_name, std::vector<std::pair<artdaq::Fragment::type_t, std::string>> extraTypes)
     : ArtdaqFragmentNameHelper(unidentified_instance_name, extraTypes)
 {
-	TLOG(TLVL_DEBUG) << "ArtdaqDemoFragmentNameHelper CONSTRUCTOR START";
+	TLOG(TLVL_DEBUG + 32) << "ArtdaqDemoFragmentNameHelper CONSTRUCTOR START";
 	SetBasicTypes(demo::makeFragmentTypeMap());
-	TLOG(TLVL_DEBUG) << "ArtdaqDemoFragmentNameHelper CONSTRUCTOR END";
+	TLOG(TLVL_DEBUG + 32) << "ArtdaqDemoFragmentNameHelper CONSTRUCTOR END";
 }
 }  // namespace artdaq
 
