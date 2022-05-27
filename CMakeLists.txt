@@ -6,19 +6,11 @@
 #  buildtool
 # ======================================================================
 
-cmake_minimum_required (VERSION 3.17)
+cmake_minimum_required (VERSION 3.19)
 
-find_package(cetmodules)
-set(CET_CETBUILDTOOLS_COMPAT TRUE)
-include(Compatibility)
-set(CET_WARN_DEPRECATED)
+find_package(cetmodules 3.08.00 REQUIRED)
 
 project(artdaq_core_demo VERSION 1.09.02)
-
-
-set(CMAKE_MODULE_PATH
-	$ENV{ARTDAQ_UTILITIES_DIR}/Modules
-	${CMAKE_MODULE_PATH})
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -54,25 +46,7 @@ endif()
 
 #cet_report_compiler_flags()
 
-# these are minimum required versions, not the actual product versions
-find_ups_product( cetbuildtools v3_03_00 )
-#find_ups_product( artdaq v0_04_02 )
-find_ups_product( artdaq_core v1_00_00 )
-find_ups_product( canvas v1_00_00 )
-#find_ups_product( fhiclcpp v2_16_00 )
-find_ups_product( messagefacility v1_10_00 )
-#find_ups_product( cpp0x v1_03_00 )
-find_ups_product( cetlib v1_03_00 )
-find_ups_root( v5_34_00 )
-find_ups_boost( v1_50_0 filesystem
-                        program_options
-                        unit_test_framework
- )
-find_ups_product( TRACE v3_03_00 )
-
-# macros for art_dictionary and simple_plugin
-include(CetTest)
-include(BasicPlugin)
+find_package(artdaq_core 3.08.04 REQUIRED)
 
 # source
 add_subdirectory(artdaq-core-demo)
