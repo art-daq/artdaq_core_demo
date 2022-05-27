@@ -1,5 +1,5 @@
 #include "artdaq-core-demo/Overlays/FragmentType.hh"
-#include "artdaq-core/Data/FragmentNameHelper.hh"
+#include "artdaq-core/Plugins/FragmentNameHelper.hh"
 
 #include "TRACE/tracemf.h"
 #define TRACE_NAME "ArtdaqDemoFragmentNameHelper"
@@ -9,7 +9,7 @@ namespace artdaq {
  * \brief ArtdaqDemoFragmentNameHelper extends ArtdaqFragmentNamingService.
  * This implementation uses artdaq-demo's SystemTypeMap and directly assigns names based on it
  */
-class ArtdaqDemoFragmentNameHelper : public ArtdaqFragmentNameHelper
+class ArtdaqDemoFragmentNameHelper : public FragmentNameHelper
 {
 public:
 	/**
@@ -30,7 +30,7 @@ private:
 };
 
 ArtdaqDemoFragmentNameHelper::ArtdaqDemoFragmentNameHelper(std::string unidentified_instance_name, std::vector<std::pair<artdaq::Fragment::type_t, std::string>> extraTypes)
-    : ArtdaqFragmentNameHelper(unidentified_instance_name, extraTypes)
+    : FragmentNameHelper(unidentified_instance_name, extraTypes)
 {
 	TLOG(TLVL_DEBUG + 32) << "ArtdaqDemoFragmentNameHelper CONSTRUCTOR START";
 	SetBasicTypes(demo::makeFragmentTypeMap());
