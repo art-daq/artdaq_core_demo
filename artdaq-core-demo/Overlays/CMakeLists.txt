@@ -1,9 +1,13 @@
-cet_make(LIBRARIES PUBLIC
+cet_make_library(LIBRARY NAME Overlays
+SOURCE	
+AsciiFragment.cc
+FragmentType.cc
+ToyFragment.cc
+UDPFragment.cc
+LIBRARIES PUBLIC
   artdaq_core::artdaq-core_Utilities
   artdaq_core::artdaq-core_Data
   TRACE::TRACE
-  EXCLUDE
-  ArtdaqDemo_fragmentNameHelper.cc
   )
   
   
