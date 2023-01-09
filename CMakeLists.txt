@@ -10,7 +10,7 @@ cmake_minimum_required (VERSION 3.19)
 
 find_package(cetmodules 3.08.00 REQUIRED)
 
-project(artdaq_core_demo VERSION 1.10.01)
+project(artdaq_core_demo VERSION 1.10.02)
 
 include(CetCMakeEnv)
 cet_cmake_env()
