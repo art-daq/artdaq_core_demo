@@ -21,7 +21,7 @@ old_style_config_vars
 #
 product			version		optional
 artdaq_core		v3_10_00
-cetmodules		v3_24_00	-	only_for_build
+cetmodules		v3_24_01	-	only_for_build
 end_product_list
 
 # e6  - with gcc 4.9.1 and -std=c++1y
@@ -30,14 +30,14 @@ end_product_list
 # -nq- here means there is no qualifier
 # a "-" here means the dependent product is not required by the parent and will not be setup
 qualifier		artdaq_core
-c14:s129:prof	c14:s129:prof
-c14:s129:debug	c14:s129:debug
-e20:s129:prof	e20:s129:prof
-e20:s129:debug	e20:s129:debug
-e26:s129:prof	e26:s129:prof
-e26:s129:debug	e26:s129:debug
-e28:s129:prof	e28:s129:prof
-e28:s129:debug	e28:s129:debug
+c14:s130:prof	c14:s130:prof
+c14:s130:debug	c14:s130:debug
+e20:s130:prof	e20:s130:prof
+e20:s130:debug	e20:s130:debug
+e26:s130:prof	e26:s130:prof
+e26:s130:debug	e26:s130:debug
+e28:s130:prof	e28:s130:prof
+e28:s130:debug	e28:s130:debug
 
 c14:s128:prof	c14:s128:prof
 c14:s128:debug	c14:s128:debug
@@ -47,6 +47,13 @@ e26:s128:prof	e26:s128:prof
 e26:s128:debug	e26:s128:debug
 e28:s128:prof	e28:s128:prof
 e28:s128:debug	e28:s128:debug
+
+c14:s120b:prof	c14:s120b:prof
+c14:s120b:debug	c14:s120b:debug
+e20:s120b:prof	e20:s120b:prof
+e20:s120b:debug	e20:s120b:debug
+e26:s120b:prof	e26:s120b:prof
+e26:s120b:debug	e26:s120b:debug
 
 c7:s120a:prof	c7:s120a:prof
 c7:s120a:debug	c7:s120a:debug
